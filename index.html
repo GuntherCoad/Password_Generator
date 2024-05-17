@@ -3,12 +3,39 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Password Generator</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js' defer></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='css\main.css'>
+    <link rel="stylesheet" type="text/css" href="css\bootstrap.css">
 </head>
 <body>
-    Testing, hello!
+    <header class="page-header">
+        <div class="icon"></div>
+        <div class="header-content">
+            <p>Password Generator</p>
+        </div>
+    </header>
+
+      <div class="generator-content">
+        <div class="generate-display">
+            <div class="bar">
+                <input type="text" readonly placeholder="Press the button to generate a password">
+            </div>
+            <div class="generate-button" id="generateButton">
+                <button>Press Here!</button>
+            </div>
+        </div>
+        <div class="options center-block">
+            <input type="checkbox" id="op1">
+            <label for="op1">option 1</label>
+            <input type="checkbox" id="op2">
+            <label for="op2">option 2</label>
+            <input type="checkbox" id="op3">
+            <label for="op3">option 3</label>
+            <input type="checkbox" id="op4">
+            <label for="op4">option 4</label>
+        </div>
+      </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
