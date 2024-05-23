@@ -4,13 +4,16 @@ const numbers="0123456789";
 const extraSymbols="\.\!\@\#\$\%\^\&\*\(\)\/\-\_";
 const buttonUser = document.getElementById("generateButton");
 const output = document.getElementById("output");
+const passSize = document.getElementById("op5");
 
 
-function generatePassword(passSize) {
+
+function generatePassword() {
     randArr = [lowerAlpha, extraSymbols, numbers, upperAlpha];
     password='';
     randArrNum = 0;
-    for (let index = 0; index < passSize; index++) {
+    stringLenPass = getPassSize();
+    for (let index = 0; index < stringLenPass; index++) {
         randArrNum = Math.round(Math.random() * (randArr.length - 1));
         password += getRandomChar(randArr[randArrNum]);
     }
@@ -26,8 +29,17 @@ function getRandomChar(stringA) {
     return stringA[randNum];
 }
 
+function getPassSize() {
+    if(passSize.value == null)
+        {
+            return 12;
+        }
+    else
+        return passSize.value;
+}
+
 
 
 buttonUser.addEventListener("click", function() {
-    generatePassword(20);
+    generatePassword();
 } );
