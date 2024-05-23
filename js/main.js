@@ -5,6 +5,7 @@ const extraSymbols="\.\!\@\#\$\%\^\&\*\(\)\/\-\_";
 const buttonUser = document.getElementById("generateButton");
 const output = document.getElementById("output");
 const passSize = document.getElementById("op5");
+const feedbackOutput = document.getElementById("feedback-output");
 
 
 
@@ -30,12 +31,31 @@ function getRandomChar(stringA) {
 }
 
 function getPassSize() {
-    if(passSize.value == null)
+    if(passSize.value == "")
         {
-            return 12;
+            sizeValidate(true);
         }
     else
+    {
+        sizeValidate(false);
         return passSize.value;
+    }
+        
+}
+
+function sizeValidate(isNull) {
+    if(isNull)
+        {
+            output.classList.add("has-error");
+            output.classList.remove("has-success");
+
+            feedbackOutput.innerHTML = '<p>A size must be entered to generate a password.</p>'
+        }
+    else
+    {
+        output.classList.remove("has-error");
+        output.classList.add("has-success");
+    }
 }
 
 
