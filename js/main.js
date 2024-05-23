@@ -3,6 +3,7 @@ const upperAlpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numbers="0123456789";
 const extraSymbols="\.\!\@\#\$\%\^\&\*\(\)\/\-\_";
 const buttonUser = document.getElementById("generateButton");
+const output = document.getElementById("output");
 
 
 function generatePassword(passSize) {
@@ -14,7 +15,7 @@ function generatePassword(passSize) {
         password += getRandomChar(randArr[randArrNum]);
     }
     //password.join("")
-    console.log(password);
+    output.value = password;
 }
 
 //randomly picks a element from one of the strings
